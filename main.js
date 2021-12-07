@@ -8,9 +8,15 @@ MyForm.addEventListener("submit", function(e){
     var myTitle = document.getElementById('Title');
     var myAuthor = document.getElementById('Author');
     var myPrice = document.getElementById('Prix');
-    var myDate = document.getElementById('date');
+    // var myDate = document.getElementById('date');
     var myType = document.getElementById('type');
     var validationOK = true;
+    var erreurAuthor = document.getElementById("erreurAuthor");
+    var erreurprice = document.getElementById("erreurprice");
+    var erreurType = document.getElementById("erreurType");
+
+
+
 
     // var mytype = /^[a-zA-Z-\s]+$/;
 
@@ -41,27 +47,25 @@ MyForm.addEventListener("submit", function(e){
         validationOK = false;
     }
     else{
-        var erreurAuthor = document.getElementById("erreurAuthor");
         erreurAuthor.innerHTML = ('validé');
         erreurAuthor.style.color ='green';
     }
 
         // ---------- myprice ------------
-
-    if(!isNaN(myPrice.value)){
-        var erreurprice = document.getElementById("erreurprice");
+    if(myPrice.value ==""){
+            erreurprice.innerHTML = ('remlire le champs ');
+            erreurprice.style.color ='red';
+            validationOK = false;
+    }
+    else if(!isNaN(myPrice.value)){
         erreurprice.innerHTML = ('validé');
         erreurprice.style.color ='green';
     }
     else{
-        var erreurprice = document.getElementById("erreurprice");
         erreurprice.innerHTML = ('le champs Prix est nom valide');
         erreurprice.style.color ='red';
-        
         validationOK = false;
-
     }
-
         // ---------- mydate ------------
 
     // if(myDate.value ==""){
@@ -79,13 +83,11 @@ MyForm.addEventListener("submit", function(e){
         // ---------- mytype ------------
 
     if(myType.value == ""){
-        var erreurType = document.getElementById("erreurType");
         erreurType.innerHTML = ('nom valide');
         erreurType.style.color ='red';
         validationOK = false;
     } 
     else{
-        var erreurType = document.getElementById("erreurType");
         erreurType.innerHTML = ('validé');
         erreurType.style.color ='green';
     }   
