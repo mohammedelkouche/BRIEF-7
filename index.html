@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form id="MyForm" action="">
+        
+        <!-- ---------- myTitle ------------ -->
+        
+        <label  for="">Titre:</label>
+        <p id="erreurTitle"></p>
+        <input id="Title" type="text" name=""> <br><br>
+
+         <!-- ---------- myAuthor ------------ -->
+
+        <label  for="">Auteur:</label>
+        <p id="erreurAuthor"></p> 
+        <input id="Author" type="text" name=""><br><br>
+
+        <!-- ---------- myprice ------------ -->
+
+        <label for="">Prix:</label>
+        <p id="erreurprice"></p>
+        <input id="Prix" type="" name=""><br><br>
+
+         <!-- ---------- mydate ------------ -->
+         
+        <label  for="">date de publication:</label>
+        <p id="erreurdate"></p>
+        <input id="date" type="date" name=""><br><br>
+
+         <!-- ---------- mylangue ------------ -->
+
+        <label  for="">Langue:</label>
+        <select name="" id="langue">
+            <option value="Arabe">  Arabe</option>
+            <option value="Français">Français</option>
+            <option value="Anglais">Anglais</option>
+        </select> <br><br>
+
+        <!-- ---------- mytype ------------ -->
+        
+        <label  for="">Type:</label>
+            <p id="erreurType"></p>
+        <label for="">Roman</label>
+            <input type="radio" id="Roman" name="fav_language" value=""><br>
+        <label for="">Essai</label>
+            <input type="radio" id="Essai" name="fav_language" value=""><br>
+        <label for="">Bande-Dessinée</label>
+            <input type="radio" id="Bande-Dessinée" name="fav_language" value=""><br><br>
+        
+        <!-- ---------- mysubmit ------------ -->
+
+        <input type="submit" value="Valider" name="valider">
+        
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
