@@ -123,7 +123,7 @@ MyForm.addEventListener("submit", function(e){
 
     
     if(myLangue.value == ""){
-        erreurLangue.innerHTML = ('Selesct one language');
+        erreurLangue.innerHTML = ('Select one language');
         erreurLangue.style.color ='red';
         validationOK = false;
     } 
@@ -142,11 +142,9 @@ MyForm.addEventListener("submit", function(e){
     } 
     else{
         erreurType.innerHTML = ('Validé');
-        erreurType.style.color ='green';
-        
+        erreurType.style.color ='green';   
     }
       
-
         // --------------- validationOK = true -----------------
 
 
