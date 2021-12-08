@@ -1,5 +1,10 @@
 
+
 var MyForm = document.getElementById("MyForm");
+
+    // ---------- function  ------------
+
+
 MyForm.addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -8,52 +13,75 @@ MyForm.addEventListener("submit", function(e){
     var myTitle = document.getElementById('Title');
     var myAuthor = document.getElementById('Author');
     var myPrice = document.getElementById('Prix');
-    // var myDate = document.getElementById('date');
+    var myDate = document.getElementById('date');
+    var myLangue = document.getElementById('langue');
+    var myselect = document.getElementById('select');
     var myType = document.getElementById('type');
     var validationOK = true;
+    var erreurTitle = document.getElementById("erreurTitle");
     var erreurAuthor = document.getElementById("erreurAuthor");
     var erreurprice = document.getElementById("erreurprice");
+    var erreurdate = document.getElementById("erreurdate");
+    var erreurLangue = document.getElementById("erreurLangue");
     var erreurType = document.getElementById("erreurType");
-
-
 
 
     // var mytype = /^[a-zA-Z-\s]+$/;
 
-        // ---------- myTitle ------------
+        // --------------- myTitle -----------------
+
     
-    if(!isNaN(myTitle.value) || myTitle.value.trim() =="" || myTitle.value.length>3)
+    if( myTitle.value.trim() =="" )
     {
-        var erreurTitle = document.getElementById("erreurTitle");
-        erreurTitle.innerHTML = ('le champs Titre est nom valide');
+        erreurTitle.innerHTML = ('Remlire le champs');
         erreurTitle.style.color ='red';
         validationOK = false;  
     }
-    // else if(mytype){
-    //     EEE
-    // }
+    else if(!isNaN(myTitle.value)){
+        erreurTitle.innerHTML = (' Entrer des lettres');
+        erreurTitle.style.color ='red';
+        validationOK = false; 
+    }
+    else if(myTitle.value.length>3){
+        erreurTitle.innerHTML = (' Vous dépassez 30 lettres');
+        erreurTitle.style.color ='red';
+        validationOK = false;
+    }
+
     else {
-        var erreurTitle = document.getElementById("erreurTitle");
-        erreurTitle.innerHTML = ('validé');
+        erreurTitle.innerHTML = ('Validé');
         erreurTitle.style.color ='green';
+        
     }
     
-        // ---------- myAuthor ------------
+        // --------------- myAuthor -----------------
 
-    if(!isNaN(myAuthor.value) || myAuthor.value.trim() =="" || myAuthor.value.length>30){
-        var erreurAuthor = document.getElementById("erreurAuthor");
-        erreurAuthor.innerHTML = ('le champs Auteur est nom valide');
+
+    if( myAuthor.value.trim() ==""){
+        erreurAuthor.innerHTML = ('Remlire le champs');
+        erreurAuthor.style.color ='red';
+        validationOK = false;  
+    }
+    else if(!isNaN(myAuthor.value)){
+        erreurAuthor.innerHTML = (' Entrer des lettres');
+        erreurAuthor.style.color ='red';
+        validationOK = false;
+    }
+    else if(myAuthor.value.length>30){
+        erreurAuthor.innerHTML = ('Vous dépassez 30 lettres');
         erreurAuthor.style.color ='red';
         validationOK = false;
     }
     else{
-        erreurAuthor.innerHTML = ('validé');
+        erreurAuthor.innerHTML = ('Validé');
         erreurAuthor.style.color ='green';
     }
 
-        // ---------- myprice ------------
+        // --------------- myprice -----------------
+
+
     if(myPrice.value ==""){
-            erreurprice.innerHTML = ('remlire le champs ');
+            erreurprice.innerHTML = ('Remlire le champs ');
             erreurprice.style.color ='red';
             validationOK = false;
     }
@@ -62,28 +90,43 @@ MyForm.addEventListener("submit", function(e){
         erreurprice.style.color ='green';
     }
     else{
-        erreurprice.innerHTML = ('le champs Prix est nom valide');
+        erreurprice.innerHTML = (' non validé');
         erreurprice.style.color ='red';
         validationOK = false;
     }
-        // ---------- mydate ------------
+        // --------------- mydate -----------------
 
-    // if(myDate.value ==""){
-    //     var erreurdate = document.getElementById("erreurdate");
-    //     erreurdate.innerHTML = ('le champs date est nom valide');
-    //     erreurdate.style.color ='red';
-    //     validationOK = false;
-    // }
-    // else{
-    //     var erreurdate = document.getElementById("erreurdate");
-    //     erreurdate.innerHTML = ('validé');
-    //     erreurdate.style.color ='green';
-    // }
-    // myPrice.value  ==""
-        // ---------- mytype ------------
 
+    if(myDate.value ==""){
+        erreurdate.innerHTML = (' Remlire le champs');
+        erreurdate.style.color ='red';
+        validationOK = false;
+    }
+    else{
+        erreurdate.innerHTML = ('validé');
+        erreurdate.style.color ='green';
+    }
+    
+        // --------------- myLangue -----------------
+
+    //:::::::::::: chercher comment validé ou nom validé le champs myLangue 
+    
+    if(myLangue.value === "select"){
+        erreurLangue.innerHTML = (' non validé');
+        erreurLangue.style.color ='red';
+        validationOK = false;
+    } 
+    else{
+        erreurLangue.innerHTML = ('validé');
+        erreurLangue.style.color ='green';
+    }  
+
+        // --------------- mytype -----------------
+
+    //::::::::::: chercher comment validé ou nom validé le champs mytype
+    
     if(myType.value == ""){
-        erreurType.innerHTML = ('nom valide');
+        erreurType.innerHTML = (' Remlire le champs');
         erreurType.style.color ='red';
         validationOK = false;
     } 
@@ -92,7 +135,8 @@ MyForm.addEventListener("submit", function(e){
         erreurType.style.color ='green';
     }   
 
-        // ---------- validationOK = true ------------
+        // --------------- validationOK = true -----------------
+
 
     if(validationOK){
         alert('formulaire envoyé !') ;
