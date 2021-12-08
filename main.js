@@ -24,6 +24,9 @@ MyForm.addEventListener("submit", function(e){
     var erreurdate = document.getElementById("erreurdate");
     var erreurLangue = document.getElementById("erreurLangue");
     var erreurType = document.getElementById("erreurType");
+    var Roman = document.getElementById("Roman");
+    var Essai = document.getElementById("Essai");
+    var BandeDessinée = document.getElementById("Bande-Dessinée");
 
 
     // var mytype = /^[a-zA-Z-\s]+$/;
@@ -85,20 +88,24 @@ MyForm.addEventListener("submit", function(e){
             erreurprice.style.color ='red';
             validationOK = false;
     }
-    // && !isNaN(myPrice.value)>=1 
-    else if(!isNaN(myPrice.value) && myPrice.value>0){
-        erreurprice.innerHTML = ('validé');
-        erreurprice.style.color ='green';
+    else if(!isNaN(myPrice.value) ){
+        if(myPrice.value>0){
+            erreurprice.innerHTML = ('validé');
+            erreurprice.style.color ='green';
+        }
+        else{
+            erreurprice.innerHTML = ("Entrer un nembre >1 !");
+            erreurprice.style.color ='red';
+            validationOK = false;
+        }
     }
-    // else if(!isNaN(myPrice.value)>0){
-    //     erreurprice.innerHTML = ('entrer un nombre positif');
-    //     erreurprice.style.color ='green';
-    // }
     else{
-        erreurprice.innerHTML = ('non validé');
+        erreurprice.innerHTML = ("Entrer un nembre");
         erreurprice.style.color ='red';
         validationOK = false;
     }
+    
+    
         // --------------- mydate -----------------
 
 
@@ -127,17 +134,18 @@ MyForm.addEventListener("submit", function(e){
 
         // --------------- mytype -----------------
 
-    //::::::::::: chercher comment validé ou nom validé le champs mytype
     
-    if(myType.value == ""){
-        erreurType.innerHTML = (' Remlire le champs');
+    if( !(Roman.checked || Essai.checked || BandeDessinée.checked)){
+        erreurType.innerHTML = (' select one type');
         erreurType.style.color ='red';
         validationOK = false;
     } 
     else{
         erreurType.innerHTML = ('Validé');
         erreurType.style.color ='green';
-    }   
+        
+    }
+      
 
         // --------------- validationOK = true -----------------
 
