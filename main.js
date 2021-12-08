@@ -33,7 +33,7 @@ MyForm.addEventListener("submit", function(e){
     
     if( myTitle.value.trim() =="" )
     {
-        erreurTitle.innerHTML = ('Remlire le champs');
+        erreurTitle.innerHTML = ('Remplire le champs');
         erreurTitle.style.color ='red';
         validationOK = false;  
     }
@@ -42,7 +42,7 @@ MyForm.addEventListener("submit", function(e){
         erreurTitle.style.color ='red';
         validationOK = false; 
     }
-    else if(myTitle.value.length>3){
+    else if(myTitle.value.length>30){
         erreurTitle.innerHTML = (' Vous dépassez 30 lettres');
         erreurTitle.style.color ='red';
         validationOK = false;
@@ -58,12 +58,12 @@ MyForm.addEventListener("submit", function(e){
 
 
     if( myAuthor.value.trim() ==""){
-        erreurAuthor.innerHTML = ('Remlire le champs');
+        erreurAuthor.innerHTML = ('Remplire le champs');
         erreurAuthor.style.color ='red';
         validationOK = false;  
     }
     else if(!isNaN(myAuthor.value)){
-        erreurAuthor.innerHTML = (' Entrer des lettres');
+        erreurAuthor.innerHTML = ('Entrer des lettres');
         erreurAuthor.style.color ='red';
         validationOK = false;
     }
@@ -81,7 +81,7 @@ MyForm.addEventListener("submit", function(e){
 
 
     if(myPrice.value ==""){
-            erreurprice.innerHTML = ('Remlire le champs ');
+            erreurprice.innerHTML = ('Remplire le champs ');
             erreurprice.style.color ='red';
             validationOK = false;
     }
@@ -90,7 +90,7 @@ MyForm.addEventListener("submit", function(e){
         erreurprice.style.color ='green';
     }
     else{
-        erreurprice.innerHTML = (' non validé');
+        erreurprice.innerHTML = ('non validé');
         erreurprice.style.color ='red';
         validationOK = false;
     }
@@ -98,7 +98,7 @@ MyForm.addEventListener("submit", function(e){
 
 
     if(myDate.value ==""){
-        erreurdate.innerHTML = (' Remlire le champs');
+        erreurdate.innerHTML = ('Remplire le champs');
         erreurdate.style.color ='red';
         validationOK = false;
     }
@@ -111,13 +111,13 @@ MyForm.addEventListener("submit", function(e){
 
     //:::::::::::: chercher comment validé ou nom validé le champs myLangue 
     
-    if(myLangue.value === "select"){
-        erreurLangue.innerHTML = (' non validé');
+    if(myLangue.value == ""){
+        erreurLangue.innerHTML = ('Selesct one language');
         erreurLangue.style.color ='red';
         validationOK = false;
     } 
     else{
-        erreurLangue.innerHTML = ('validé');
+        erreurLangue.innerHTML = ('Validé');
         erreurLangue.style.color ='green';
     }  
 
@@ -131,7 +131,7 @@ MyForm.addEventListener("submit", function(e){
         validationOK = false;
     } 
     else{
-        erreurType.innerHTML = ('validé');
+        erreurType.innerHTML = ('Validé');
         erreurType.style.color ='green';
     }   
 
@@ -139,7 +139,7 @@ MyForm.addEventListener("submit", function(e){
 
 
     if(validationOK){
-        alert('formulaire envoyé !') ;
+        alert('Formulaire envoyé !') ;
     }
     
 }   );
