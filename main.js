@@ -85,10 +85,15 @@ MyForm.addEventListener("submit", function(e){
             erreurprice.style.color ='red';
             validationOK = false;
     }
-    else if(!isNaN(myPrice.value)){
+    // && !isNaN(myPrice.value)>=1 
+    else if(!isNaN(myPrice.value) && myPrice.value>0){
         erreurprice.innerHTML = ('validé');
         erreurprice.style.color ='green';
     }
+    // else if(!isNaN(myPrice.value)>0){
+    //     erreurprice.innerHTML = ('entrer un nombre positif');
+    //     erreurprice.style.color ='green';
+    // }
     else{
         erreurprice.innerHTML = ('non validé');
         erreurprice.style.color ='red';
@@ -109,7 +114,6 @@ MyForm.addEventListener("submit", function(e){
     
         // --------------- myLangue -----------------
 
-    //:::::::::::: chercher comment validé ou nom validé le champs myLangue 
     
     if(myLangue.value == ""){
         erreurLangue.innerHTML = ('Selesct one language');
