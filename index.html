@@ -46,46 +46,49 @@
         </select> <br><br>
 
         <!-- ---------- mytype ------------ -->
+
         
         <label id="type" for="">Type:</label>
             <p id="erreurType"></p>
         <label for="">Roman</label>
-            <input type="radio" id="Roman" name="fav_language" value=""><br>
+            <input type="radio" id="Roman" name="fav_language" value="Roman" class="radio"><br>
         <label for="">Essai</label>
-            <input type="radio" id="Essai" name="fav_language" value=""><br>
+            <input type="radio" id="Essai" name="fav_language" value="Essai" class="radio"><br>
         <label for="">Bande-Dessinée</label>
-            <input type="radio" id="Bande-Dessinée" name="fav_language" value=""><br><br>
+            <input type="radio" id="Bande-Dessinée" name="fav_language" value="Bande-Dessinée" class="radio"><br><br>
         
         <!-- ---------- mysubmit ------------ -->
 
-        <input type="submit" value="Valider" name="valider">
+        <input id="submit" type="submit" value="Valider" name="valider">
     
-        <table>
-            <caption>Alien football stars</caption>
+
+        <!-- ---------- myTable ------------ -->
+
+
+        <table border="1px">
+            <caption>Les informations de l'ouvrage</caption>
             <tr>
-                <th scope="col">Player</th>
-                <th scope="col">Gloobles</th>
-                <th scope="col">Za'taak</th>
-                <th scope="col">Player</th>
-                <th scope="col">Gloobles</th>
-                <th scope="col">Za'taak</th>
+                
+                <th >Titre</th>
+                <th >Auteur</th>
+                <th >Prix</th>
+                <th >date de publication</th>
+                <th >Langue</th>
+                <th >Type</th>
+                <!-- <th scope="col">Type</th> -->
+
             </tr>
-            <tr>
-                <th scope="row">TR-7</th>
+            <!-- <tr>
                 <td>7</td>
-                <td>4,569</td>
-            </tr>
-            <tr>
-                <th scope="row">Khiresh Odo</th>
                 <td>7</td>
-                <td>7,223</td>
-            </tr>
-            <tr>
-                <th scope="row">Mia Oolong</th>
-                <td>9</td>
-                <td>6,219</td>
-            </tr>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>4</td>
+            </tr> -->
+           
         </table>
+        <!-- <div id="tableAjoute"></div> -->
 
 
     </form>

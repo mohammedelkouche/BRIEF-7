@@ -8,14 +8,14 @@ var MyForm = document.getElementById("MyForm");
 MyForm.addEventListener("submit", function(e){
     e.preventDefault();
 
-        // ----------declaration des variable  ------------
+        // ----------declaration des variables  ------------
 
     var myTitle = document.getElementById('Title');
     var myAuthor = document.getElementById('Author');
     var myPrice = document.getElementById('Prix');
     var myDate = document.getElementById('date');
     var myLangue = document.getElementById('langue');
-    var myselect = document.getElementById('select');
+    // var myselect = document.getElementById('select');
     var myType = document.getElementById('type');
     var validationOK = true;
     var erreurTitle = document.getElementById("erreurTitle");
@@ -27,6 +27,7 @@ MyForm.addEventListener("submit", function(e){
     var Roman = document.getElementById("Roman");
     var Essai = document.getElementById("Essai");
     var BandeDessinée = document.getElementById("Bande-Dessinée");
+    var Table = document.getElementsByTagName("table")[0];
 
 
     // var mytype = /^[a-zA-Z-\s]+$/;
@@ -94,7 +95,7 @@ MyForm.addEventListener("submit", function(e){
             erreurprice.style.color ='green';
         }
         else{
-            erreurprice.innerHTML = ("Entrer un nembre >1 !");
+            erreurprice.innerHTML = ("Entrer un nembre >0 !");
             erreurprice.style.color ='red';
             validationOK = false;
         }
@@ -144,12 +145,95 @@ MyForm.addEventListener("submit", function(e){
         erreurType.innerHTML = ('Validé');
         erreurType.style.color ='green';   
     }
-      
+    
         // --------------- validationOK = true -----------------
 
 
-    if(validationOK){
-        alert('Formulaire envoyé !') ;
-    }
+    if(validationOK ){
+        // alert('Formulaire envoyé !') ;
+
+        // var submit= document.getElementById("submit")
+        // submit.addEventListener("click", function(){
+            var row = Table.insertRow(-1);
+            row.insertCell(0).innerHTML = myTitle.value;
+            row.insertCell(1).innerHTML = myAuthor.value;
+            row.insertCell(2).innerHTML = myPrice.value;
+            row.insertCell(3).innerHTML = myDate.value;
+            row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
+            row.insertCell(5).innerHTML = myType.value;
+            
+            // var cell1 = row.insertCell(0) 
+            // var cell2 = row.insertCell(1) 
+            // var cell3 = row.insertCell(2) 
+            // var cell4 = row.insertCell(3) 
+            // var cell5 = row.insertCell(4) 
+            // var cell6 = row.insertCell(5) 
+            // var cellType =""
+            
+            // for(i=0; i<type.length;i++){
+            //     if(check[])
+            // }
+
+
+
+        // });
+        
+//         var mysubmit = document.getElementById("submit");
+
+
+// mysubmit.addEventListener('submit', function(){
+//     var tableAjoute= document.getElementById("tableAjoute")
     
-}   );
+//     var tableAjoute = 
+//                         <tr>
+//                             <td>${myTitle.value}</td>
+//                             <td>${myAuthor.value}</td>
+//                             <td>${myPrice.value}</td>
+//                             <td>${myDate.value}</td>
+//                             <td>${myLangue.value}</td>
+//                             <td>${myType.value}</td>
+//                         </tr>
+
+//     Table.innerHTML+=tableAjoute; 
+
+//  })
+    };
+   
+    // var mysubmit = document.getElementById("submit");
+
+// mysubmit.addEventListener("click", function(){
+//     // e.preventDefault();
+//     var tableAjoute= document.getElementById("tableAjoute")
+//     var tableAjoute = 
+//                         <tr>
+//                             <td>${myTitle.value}</td>
+//                             <td>${myAuthor.value}</td>
+//                             <td>${myPrice.value}</td>
+//                             <td>${myDate.value}</td>
+//                             <td>${myLangue.value}</td>
+//                             <td>${myType.value}</td>
+//                         </tr>
+
+//     Table.innerHTML+=tableAjoute;
+
+//  });
+    // console.log(erreurprice.innerHTML);
+    // if(erreurTitle.innerHTML == "Validé" && erreurAuthor.innerHTML == "Validé" && erreurLangue.innerHTML == "Validé" && erreurType.innerHTML == "Validé" && erreurdate.innerHTML == "validé" && erreurprice.innerHTML == "validé")
+    //     alert("validé");
+
+        // --------------- validationOK = true -----------------
+
+    // var tableAjoute= document.getElementById("tableAjoute")
+    // var tableAjoute = 
+    //                     <tr>
+    //                         <td>${myTitle.value}</td>
+    //                         <td>${myAuthor.value}</td>
+    //                         <td>${myPrice.value}</td>
+    //                         <td>${myDate.value}</td>
+    //                         <td>${myLangue.value}</td>
+    //                         <td>${myType.value}</td>
+    //                     </tr>
+
+    // Table.innerHTML+=tableAjoute;        
+});
+
