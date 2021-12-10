@@ -16,7 +16,8 @@ MyForm.addEventListener("submit", function(e){
     var myDate = document.getElementById('date');
     var myLangue = document.getElementById('langue');
     // var myselect = document.getElementById('select');
-    var myType = document.getElementById('type');
+    // var myType = document.getElementById('type');
+    var typeRadio = document.getElementsByClassName("type");
     var validationOK = true;
     var erreurTitle = document.getElementById("erreurTitle");
     var erreurAuthor = document.getElementById("erreurAuthor");
@@ -154,26 +155,23 @@ MyForm.addEventListener("submit", function(e){
 
         // var submit= document.getElementById("submit")
         // submit.addEventListener("click", function(){
+            
             var row = Table.insertRow(-1);
             row.insertCell(0).innerHTML = myTitle.value;
             row.insertCell(1).innerHTML = myAuthor.value;
             row.insertCell(2).innerHTML = myPrice.value;
             row.insertCell(3).innerHTML = myDate.value;
             row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
-            row.insertCell(5).innerHTML = myType.value;
-            
-            // var cell1 = row.insertCell(0) 
-            // var cell2 = row.insertCell(1) 
-            // var cell3 = row.insertCell(2) 
-            // var cell4 = row.insertCell(3) 
-            // var cell5 = row.insertCell(4) 
-            // var cell6 = row.insertCell(5) 
-            // var cellType =""
-            
-            // for(i=0; i<type.length;i++){
-            //     if(check[])
-            // }
-
+            // row.insertCell(5).innerHTML = typeRadio.value;
+            var temp_cell="";
+                for(var i=0;i<typeRadio.length;i++){
+                    if(typeRadio[i].checked){
+                        temp_cell = type[i].value;
+                    }
+                }
+                row.insertCell(5).innerHTML = temp_cell;
+          
+        
 
 
         // });
@@ -198,42 +196,6 @@ MyForm.addEventListener("submit", function(e){
 
 //  })
     };
-   
-    // var mysubmit = document.getElementById("submit");
-
-// mysubmit.addEventListener("click", function(){
-//     // e.preventDefault();
-//     var tableAjoute= document.getElementById("tableAjoute")
-//     var tableAjoute = 
-//                         <tr>
-//                             <td>${myTitle.value}</td>
-//                             <td>${myAuthor.value}</td>
-//                             <td>${myPrice.value}</td>
-//                             <td>${myDate.value}</td>
-//                             <td>${myLangue.value}</td>
-//                             <td>${myType.value}</td>
-//                         </tr>
-
-//     Table.innerHTML+=tableAjoute;
-
-//  });
-    // console.log(erreurprice.innerHTML);
-    // if(erreurTitle.innerHTML == "Validé" && erreurAuthor.innerHTML == "Validé" && erreurLangue.innerHTML == "Validé" && erreurType.innerHTML == "Validé" && erreurdate.innerHTML == "validé" && erreurprice.innerHTML == "validé")
-    //     alert("validé");
-
-        // --------------- validationOK = true -----------------
-
-    // var tableAjoute= document.getElementById("tableAjoute")
-    // var tableAjoute = 
-    //                     <tr>
-    //                         <td>${myTitle.value}</td>
-    //                         <td>${myAuthor.value}</td>
-    //                         <td>${myPrice.value}</td>
-    //                         <td>${myDate.value}</td>
-    //                         <td>${myLangue.value}</td>
-    //                         <td>${myType.value}</td>
-    //                     </tr>
-
-    // Table.innerHTML+=tableAjoute;        
+          
 });
 
