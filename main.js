@@ -153,22 +153,22 @@ MyForm.addEventListener("submit", function(e){
     if(validationOK ){
         alert('Formulaire envoyé !') ;
 
-        // ------------------ Methode 1: insertRow / insertCell --------------------
+        // // ------------------ Methode 1: insertRow / insertCell --------------------
 
-                // var row = Table.insertRow(-1);
-                // row.insertCell(0).innerHTML = myTitle.value;
-                // row.insertCell(1).innerHTML = myAuthor.value;
-                // row.insertCell(2).innerHTML = myPrice.value;
-                // row.insertCell(3).innerHTML = myDate.value;
-                // row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
+        //         var row = Table.insertRow(-1);
+        //         row.insertCell(0).innerHTML = myTitle.value;
+        //         row.insertCell(1).innerHTML = myAuthor.value;
+        //         row.insertCell(2).innerHTML = myPrice.value;
+        //         row.insertCell(3).innerHTML = myDate.value;
+        //         row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
                 
-                // var temp_cell="";
-                //     for(var i=0;i<type.length;i++){
-                //         if(type[i].checked){
-                //             temp_cell = type[i].value;
-                //         }
-                //     }
-                //     row.insertCell(5).innerHTML = temp_cell;
+        //         var temp_cell="";
+        //             for(var i=0;i<type.length;i++){
+        //                 if(type[i].checked){
+        //                     temp_cell = type[i].value;
+        //                 }
+        //             }
+        //             row.insertCell(5).innerHTML = temp_cell;
                 
         // ------------------ Methode 2: innerHTML --------------------
 
