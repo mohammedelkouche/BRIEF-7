@@ -17,7 +17,7 @@ MyForm.addEventListener("submit", function(e){
     var myLangue = document.getElementById('langue');
     // var myselect = document.getElementById('select');
     // var myType = document.getElementById('type');
-    var typeRadio = document.getElementsByClassName("type");
+    var type = document.getElementsByClassName("type");
     var validationOK = true;
     var erreurTitle = document.getElementById("erreurTitle");
     var erreurAuthor = document.getElementById("erreurAuthor");
@@ -151,50 +151,46 @@ MyForm.addEventListener("submit", function(e){
 
 
     if(validationOK ){
-        // alert('Formulaire envoyé !') ;
+        alert('Formulaire envoyé !') ;
 
-        // var submit= document.getElementById("submit")
-        // submit.addEventListener("click", function(){
-            
-            var row = Table.insertRow(-1);
-            row.insertCell(0).innerHTML = myTitle.value;
-            row.insertCell(1).innerHTML = myAuthor.value;
-            row.insertCell(2).innerHTML = myPrice.value;
-            row.insertCell(3).innerHTML = myDate.value;
-            row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
-            // row.insertCell(5).innerHTML = typeRadio.value;
-            var temp_cell="";
-                for(var i=0;i<typeRadio.length;i++){
-                    if(typeRadio[i].checked){
-                        temp_cell = type[i].value;
-                    }
-                }
-                row.insertCell(5).innerHTML = temp_cell;
-          
-        
+        // ------------------ Methode 1: insertRow / insertCell --------------------
 
+                // var row = Table.insertRow(-1);
+                // row.insertCell(0).innerHTML = myTitle.value;
+                // row.insertCell(1).innerHTML = myAuthor.value;
+                // row.insertCell(2).innerHTML = myPrice.value;
+                // row.insertCell(3).innerHTML = myDate.value;
+                // row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
+                
+                // var temp_cell="";
+                //     for(var i=0;i<type.length;i++){
+                //         if(type[i].checked){
+                //             temp_cell = type[i].value;
+                //         }
+                //     }
+                //     row.insertCell(5).innerHTML = temp_cell;
+                
+        // ------------------ Methode 2: innerHTML --------------------
 
-        // });
-        
-//         var mysubmit = document.getElementById("submit");
+                var temp_cell="" ;
+                            for(var i=0;i<type.length;i++){
+                                if(type[i].checked){
+                                    temp_cell = type[i].value;
+                                }
+                            }
+                
+                var tableAjoute = `
+                                    <tr>
+                                        <td>${myTitle.value}</td>
+                                        <td>${myAuthor.value}</td>
+                                        <td>${myPrice.value}</td>
+                                        <td>${myDate.value}</td>
+                                        <td>${myLangue.options[myLangue.selectedIndex].value}</td>
+                                        <td>${temp_cell}</td>
+                                    </tr>`;
 
+                Table.innerHTML+=tableAjoute; 
 
-// mysubmit.addEventListener('submit', function(){
-//     var tableAjoute= document.getElementById("tableAjoute")
-    
-//     var tableAjoute = 
-//                         <tr>
-//                             <td>${myTitle.value}</td>
-//                             <td>${myAuthor.value}</td>
-//                             <td>${myPrice.value}</td>
-//                             <td>${myDate.value}</td>
-//                             <td>${myLangue.value}</td>
-//                             <td>${myType.value}</td>
-//                         </tr>
-
-//     Table.innerHTML+=tableAjoute; 
-
-//  })
     };
           
 });
