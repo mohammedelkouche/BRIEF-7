@@ -4,68 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     
 </head>
 <body>
-    <form id="MyForm" action="">
-        
-        <!-- ---------- myTitle ------------ -->
-        
-        <label  for="">Titre:</label>
-        <p id="erreurTitle"></p>
-        <input id="Title" type="text" name=""> <br><br>
+    <div>
+        <form id="MyForm" action="">
+                    
+                    <!-- ---------- myTitle ------------ -->
+                    
+                    <label  for="">Titre:</label>
+                    <p id="erreurTitle"></p>
+                    <input id="Title" type="text" name=""> <br><br>
 
-         <!-- ---------- myAuthor ------------ -->
+                    <!-- ---------- myAuthor ------------ -->
 
-        <label  for="">Auteur:</label>
-        <p id="erreurAuthor"></p> 
-        <input id="Author" type="text" name=""><br><br>
+                    <label  for="">Auteur:</label>
+                    <p id="erreurAuthor"></p> 
+                    <input id="Author" type="text" name=""><br><br>
 
-        <!-- ---------- myprice ------------ -->
+                    <!-- ---------- myprice ------------ -->
 
-        <label for="">Prix:</label>
-        <p id="erreurprice"></p>
-        <input id="Prix" type="" name=""><br><br>
+                    <label for="">Prix:</label>
+                    <p id="erreurprice"></p>
+                    <input id="Prix" type="" name=""><br><br>
 
-         <!-- ---------- mydate ------------ -->
-         
-        <label  for="">date de publication:</label>
-        <p id="erreurdate"></p>
-        <input id="date" type="date" name=""><br><br>
+                    <!-- ---------- mydate ------------ -->
+                    
+                    <label  for="">date de publication:</label>
+                    <p id="erreurdate"></p>
+                    <input id="date" type="date" name=""><br><br>
 
-         <!-- ---------- mylangue ------------ -->
+                    <!-- ---------- mylangue ------------ -->
 
-        <label  for="">Langue:</label>
-        <p id="erreurLangue"></p>
-        <select id="langue" >
-            <option id="select" disabled hidden selected value="">selectionez</option>
-            <option value="Arabe">Arabe</option>
-            <option value="Français">Français</option>
-            <option value="Anglais">Anglais</option>
-        </select> <br><br>
+                    <label  for="">Langue:</label>
+                    <p id="erreurLangue"></p>
+                    <select id="langue" >
+                        <option id="select" disabled hidden selected value="">selectionez</option>
+                        <option value="Arabe">Arabe</option>
+                        <option value="Français">Français</option>
+                        <option value="Anglais">Anglais</option>
+                    </select> <br><br>
 
-        <!-- ---------- mytype ------------ -->
+                    <!-- ---------- mytype ------------ -->
 
-        
-        <label id="type" for="">Type:</label>
-            <p id="erreurType"></p>
-        <label for="">Roman</label>
-            <input type="radio" id="Roman" name="fav_language" value="Roman" class="type"><br>
-        <label for="">Essai</label>
-            <input type="radio" id="Essai" name="fav_language" value="Essai" class="type"><br>
-        <label for="">Bande-Dessinée</label>
-            <input type="radio" id="Bande-Dessinée" name="fav_language" value="Bande-Dessinée" class="type"><br><br>
-        
-        <!-- ---------- mysubmit ------------ -->
+                    
+                    <label id="type" for="">Type:</label>
+                        <p id="erreurType"></p>
+                    <label for="">Roman</label>
+                        <input type="radio" id="Roman" name="fav_language" value="Roman" class="type"><br>
+                    <label for="">Essai</label>
+                        <input type="radio" id="Essai" name="fav_language" value="Essai" class="type"><br>
+                    <label for="">Bande-Dessinée</label>
+                        <input type="radio" id="Bande-Dessinée" name="fav_language" value="Bande-Dessinée" class="type"><br><br>
+                    
+                    <!-- ---------- mysubmit ------------ -->
 
-        <input id="submit" type="submit" value="Valider" name="valider">
-    
+                    <input id="submit" type="submit" value="Valider" name="valider">
+                    <input id="cancel" type="reset" value="cancel" name="cancel">
+
+        </form>
+    </div>
 
         <!-- ---------- myTable ------------ -->
 
 
-        <table id="Table" border="1px" >
+        <table id="Table" name="Table" border="1px" >
             <caption>Les informations de l'ouvrage</caption>
             <tr>
                 
@@ -78,24 +83,14 @@
                 <th >Action</th>
 
             </tr>
-            <tr>
-                
-                <th >Tre</th>
-                <th >Auur</th>
-                <th >Prix</th>
-                <th >de de publication</th>
-                <th >Lane</th>
-                <th >Type</th>
-                <th >Action</th>
-
-            </tr>
+            
           
            
         </table>
         <!-- <div id="tableAjoute"></div> -->
 
 
-    </form>
-    <script src="main.js"></script>
+    
+    <script src="Test.js"></script>
 </body>
 </html>

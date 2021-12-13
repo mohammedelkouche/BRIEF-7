@@ -1,16 +1,3 @@
-
-
-var MyForm = document.getElementById("MyForm");
-
-// ---------- function  ------------
-
-
-MyForm.addEventListener("submit", function(e)
-{
-e.preventDefault();
-
-    // ----------declaration des variables  ------------
-
 var myTitle = document.getElementById('Title');
 var myAuthor = document.getElementById('Author');
 var myPrice = document.getElementById('Prix');
@@ -30,6 +17,89 @@ var Roman = document.getElementById("Roman");
 var Essai = document.getElementById("Essai");
 var BandeDessinée = document.getElementById("Bande-Dessinée");
 var Table = document.getElementsByTagName("table")[0];
+var MyForm = document.getElementById("MyForm");
+  
+    // -------------- delete row --------------
+    
+        // var RowIndex;
+        // DeleteButton = document.getElementById("DeleteButton")
+        // DeleteButton.addEventListener("click",function()
+        // {
+        //     for(var j=0;j<Table.rows.length;j++)
+        //     {
+        //         Table.rows[j].onclick=function()
+        //         {
+        //             if (confirm("Prees Okey, If you want to delete data.")) 
+        //                 {
+        //                     RowIndex= this.rowIndex;
+        //                     Table.deleteRow(RowIndex);
+        //                 } 
+        //             else{
+        //                     alert("you pressed cancel!");  
+        //                 }
+        //         }
+        //     }
+        // }   
+        // );
+
+
+    // -------------- update row --------------
+
+        // var UpdateButton = document.getElementById("UpdateButton");
+
+        //     UpdateButton.addEventListener("click",function()
+        // 	{
+        // 		for(var i=1;i<Table.rows.length;i++)
+        // 		{
+        // 		    Table.rows[i].onclick=function()
+        // 			{
+
+        //         myTitle.value=this.cells[0].innerHTML;
+        //         myAuthor.value=this.cells[1].innerHTML;
+        //         myPrice.value=this.cells[2].innerHTML;
+        //         myDate.value=this.cells[3].innerHTML;
+        //         myLangue.value=this.cells[4].innerHTML;
+        //         type.value=this.cells[5].innerHTML;
+
+        //     		};
+        //     	}
+        //     }  
+        //  );
+var UpdateButton = document.getElementById("UpdateButton");
+
+            UpdateButton.addEventListener("click",function()
+        	{
+        		for(var i=1;i<Table.rows.length;i++)
+        		{
+        		    Table.rows[i].onclick=function()
+        			{
+
+                myTitle.value=this.cells[0].innerHTML;
+                myAuthor.value=this.cells[1].innerHTML;
+                myPrice.value=this.cells[2].innerHTML;
+                myDate.value=this.cells[3].innerHTML;
+                myLangue.value=this.cells[4].innerHTML;
+                type.value=this.cells[5].innerHTML;
+
+            		};
+            	}
+            }  
+            );
+
+// ---------- function  ------------
+
+// function deleteRow(r){
+//     var i = r.parentNode.parentNode.rowIndex ;
+//     Table.deleteRow(i) ;
+// }
+
+MyForm.addEventListener("submit", function(e)
+{
+e.preventDefault();
+
+    // ----------declaration des variables  ------------
+
+
 
 
 // var mytype = /^[a-zA-Z-\s]+$/;
@@ -159,8 +229,8 @@ if(validationOK ){
 
             // -------------- Insert Row ----------------
 
-            var row = Table.insertRow(-1);
-            //  var row = Table.insertRow(Table.rows.length); 
+            // var row = Table.insertRow(-1);
+             var row = Table.insertRow(Table.rows.length); 
 
 
             // -------------- Insert cells to the Row ----------------
@@ -179,8 +249,31 @@ if(validationOK ){
                 }
             row.insertCell(5).innerHTML = temp_cell;
             row.insertCell(6).innerHTML = 
-            '<button onclick= "UpdateButton()" value= "Edit" >Edit</button>' + '<button Onclick="DeleteButton()" value="delet">Delete</button>' ;
-            // '<button id="UpdateButton" value= "Edit" >Edit</button>' + '<button id="DeleteButton" value="delet" >Delete</button>' ;
+            // '<button onclick= "UpdateButton()" value= "Edit" >Edit</button>' + '<button Onclick="deleteRow(this)" value="delet">Delete</button>' ;
+            '<button id="UpdateButton" value= "Edit" >Edit</button>' + '<button id="DeleteButton" value="delet" >Delete</button>' ;
+            // -------------- delete row --------------
+    // // 
+    //     var RowIndex;
+    //     DeleteButton = document.getElementById("DeleteButton")
+    //     DeleteButton.addEventListener("click",function()
+    //     {
+    //         for(var j=0;j<Table.rows.length;j++)
+    //         {
+    //             Table.rows[j].onclick=function()
+    //             {
+    //                 if (confirm("Prees Okey, If you want to delete data.")) 
+    //                     {
+    //                         RowIndex= this.rowIndex;
+    //                         Table.deleteRow(RowIndex);
+    //                     } 
+    //                 else{
+    //                         alert("you pressed cancel!");  
+    //                     }
+    //             }
+    //         }
+    //     }   
+    // )
+        
 
 
             // --------- Methode 2 create buttons -----------
@@ -215,66 +308,30 @@ if(validationOK ){
 
             // Table.innerHTML+=tableAjoute; 
         
-    
-        // -------------- delete row --------------
-    
-        var RowIndex;
+         // -------------- selescted row data into unput text --------------
 
-        DeleteButton.addEventListener("click",function()
-        {
-            for(var j=0;j<Table.rows.length;j++)
-            {
-                Table.rows[j].onclick=function()
-                {
-                    if (confirm("Prees Okey, If you want to delete data.")) 
-                        {
-                            RowIndex=this.rowIndex;
-                            Table.deleteRow(RowIndex);
-                        } 
-                        else {
-                            alert("you pressed cancel!");
-                        }
-                };
+                // function selectedRowtoInpt()
+                // {
+                //     // var rIndex, Table = document.getElementById("Table");
+                //     var rIndex, Table = document.getElementsByTagName("table")[0];
+                    
+                //         for(var j=0;j<Table.rows.length; j++)
+                //         {
+                //             Table.rows[j].onclick = function()
+                //             {
+                //                 rIndex = this.rowIndex ;
+                //                 myTitle.value=this.cells[0].innerHTML;
+                //                 myAuthor.value=this.cells[1].innerHTML;
+                //                 myPrice.value=this.cells[2].innerHTML;
+                //                 myDate.value=this.cells[3].innerHTML;
+                //                 myLangue.value=this.cells[4].innerHTML;
+                //                 type.value=this.cells[5].innerHTML;
+                //             }
+                //         }
+                      
+                // }
+
             }
-        }   
-        );
-
-
-        // -------------- update row --------------
-
-        // var UpdateButton = document.getElementById("UpdateButton");
-
-        //     UpdateButton.addEventListener("click",function()
-        // 	{
-        // 		for(var i=1;i<Table.rows.length;i++)
-        // 		{
-        // 		    Table.rows[i].onclick=function()
-        // 			{
-
-//var myTitle = document.getElementById('Title');
-// var myAuthor = document.getElementById('Author');
-// var myPrice = document.getElementById('Prix');
-// var myDate = document.getElementById('date');
-// var myLangue = document.getElementById('langue');
-// var myselect = document.getElementById('select');
-// var myType = document.getElementById('type');
-// var type = document.getElementsByClassName("type")
-
-                // myTitle.value=this.cells[0].innerHTML;
-                // myAuthor.value=this.cells[1].innerHTML;
-                // myPrice.value=this.cells[2].innerHTML;
-                // myDate.value=this.cells[3].innerHTML;
-                // myLangue.value=this.cells[4].innerHTML;
-                // type.value=this.cells[5].innerHTML;
-
-            // 		};
-            // 	}
-            // }  
-            // );
-
-                // return true;
-            }
-            // var DeleteButton = document.getElementById("DeleteButton");
             
 }
       
