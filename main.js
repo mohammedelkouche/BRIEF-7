@@ -5,7 +5,8 @@ var MyForm = document.getElementById("MyForm");
     // ---------- function  ------------
 
 
-MyForm.addEventListener("submit", function(e){
+MyForm.addEventListener("submit", function(e)
+{
     e.preventDefault();
 
         // ----------declaration des variables  ------------
@@ -151,47 +152,121 @@ MyForm.addEventListener("submit", function(e){
 
 
     if(validationOK ){
-        alert('Formulaire envoyé !') ;
 
-        // // ------------------ Methode 1: insertRow / insertCell --------------------
+        // alert('Formulaire envoyé !') ;
 
-        //         var row = Table.insertRow(-1);
-        //         row.insertCell(0).innerHTML = myTitle.value;
-        //         row.insertCell(1).innerHTML = myAuthor.value;
-        //         row.insertCell(2).innerHTML = myPrice.value;
-        //         row.insertCell(3).innerHTML = myDate.value;
-        //         row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
+        // ------------------ Methode 1: insertRow / insertCell --------------------
+
+                // -------------- Insert Row ----------------
+
+                // var row = Table.insertRow(-1);
+                var row = Table.insertRow(Table.rows.length);
+
+                // -------------- Insert cells to the Row ----------------
+
+                row.insertCell(0).innerHTML = myTitle.value;
+                row.insertCell(1).innerHTML = myAuthor.value;
+                row.insertCell(2).innerHTML = myPrice.value;
+                row.insertCell(3).innerHTML = myDate.value;
+                row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
                 
-        //         var temp_cell="";
-        //             for(var i=0;i<type.length;i++){
-        //                 if(type[i].checked){
-        //                     temp_cell = type[i].value;
-        //                 }
-        //             }
-        //             row.insertCell(5).innerHTML = temp_cell;
+                var temp_cell="";
+                    for(var i=0;i<type.length;i++){
+                        if(type[i].checked){
+                            temp_cell = type[i].value;
+                        }
+                    }
+                row.insertCell(5).innerHTML = temp_cell;
+                row.insertCell(6).innerHTML = 
+                '<button id="UpdateButton"  onclick="EditRow(this)" >Edit</button>' + '<button id="DeleteButton" onclick="deleteRow(this)">Delete</button>' ;
                 
+               
+                
+                for(var i = 0; i<4;i++){
+                    input[i].value = "";
+                    
+                } 
+                myLangue.value="-- select langue--"; 
+                var x = document.getElementsByName("season");
+                    var i;
+                    for (i = 0; i < x.length; i++) {
+                    if (x[i].type == "radio") {
+                    x[i].checked = false;
+                    } }
+        
+            }
+
+    // }
+
+                // --------- Methode 2 create buttons -----------
+
+                // var UpdateButton = document.createElement("button");
+                // var DeleteButton = document.createElement("button");
+                // var cell6 =  row.insertCell(6)
+                // cell6 .appendChild(UpdateButton); 
+                // UpdateButton.innerHTML="Update";
+                // cell6 .appendChild(DeleteButton);
+                // DeleteButton.innerHTML="Remove";
+               
+  
         // ------------------ Methode 2: innerHTML --------------------
 
-                var temp_cell="" ;
-                            for(var i=0;i<type.length;i++){
-                                if(type[i].checked){
-                                    temp_cell = type[i].value;
-                                }
-                            }
+                // var temp_cell="" ;
+                //             for(var i=0;i<type.length;i++){
+                //                 if(type[i].checked){
+                //                     temp_cell = type[i].value;
+                //                 }
+                //             }
                 
-                var tableAjoute = `
-                                    <tr>
-                                        <td>${myTitle.value}</td>
-                                        <td>${myAuthor.value}</td>
-                                        <td>${myPrice.value}</td>
-                                        <td>${myDate.value}</td>
-                                        <td>${myLangue.options[myLangue.selectedIndex].value}</td>
-                                        <td>${temp_cell}</td>
-                                    </tr>`;
+                // var tableAjoute = `
+                //                     <tr>
+                //                         <td>${myTitle.value}</td>
+                //                         <td>${myAuthor.value}</td>
+                //                         <td>${myPrice.value}</td>
+                //                         <td>${myDate.value}</td>
+                //                         <td>${myLangue.options[myLangue.selectedIndex].value}</td>
+                //                         <td>${temp_cell}</td>
+                //                     </tr>`;
 
-                Table.innerHTML+=tableAjoute; 
+                // Table.innerHTML+=tableAjoute; 
 
-    };
+            // -------------- selescted row data into unput text --------------
+
+                // function selectedRowtoInpt()
+                // {
+                //     // var rIndex, Table = document.getElementById("Table");
+                //     var rIndex, Table = document.getElementsByTagName("table")[0];
+                    
+                //         for(var j=0;j<Table.rows.length; j++)
+                //         {
+                //             Table.rows[j].onclick = function()
+                //             {
+                //                 rIndex = this.rowIndex ;
+                //                 myTitle.value=this.cells[0].innerHTML;
+                //                 myAuthor.value=this.cells[1].innerHTML;
+                //                 myPrice.value=this.cells[2].innerHTML;
+                //                 myDate.value=this.cells[3].innerHTML;
+                //                 myLangue.value=this.cells[4].innerHTML;
+                //                 type.value=this.cells[5].innerHTML;
+                //             }
+                //         }
+                      
+                // }
+
+            // -------------- delete row --------------
+        
+            function deleteRow(r) {
+                var i = r.parentNode.parentNode.rowIndex;
+                Table.deleteRow(i);
+            }   
+
+
+
+		    // -------------- update row --------------
+
+            
+               
+	}
           
-});
+);
 
