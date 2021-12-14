@@ -1,6 +1,28 @@
 
+    // ----------declaration des variables  ------------
 
-var MyForm = document.getElementById("MyForm");
+    var MyForm = document.getElementById("MyForm");
+    var myTitle = document.getElementById('Title');
+    var myAuthor = document.getElementById('Author');
+    var myPrice = document.getElementById('Prix');
+    var myDate = document.getElementById('date');
+    var myLangue = document.getElementById('langue');
+    // var myselect = document.getElementById('select');
+    // var myType = document.getElementById('type');
+    var type = document.getElementsByClassName("type");
+    var validationOK = true;
+    var erreurTitle = document.getElementById("erreurTitle");
+    var erreurAuthor = document.getElementById("erreurAuthor");
+    var erreurprice = document.getElementById("erreurprice");
+    var erreurdate = document.getElementById("erreurdate");
+    var erreurLangue = document.getElementById("erreurLangue");
+    var erreurType = document.getElementById("erreurType");
+    var Roman = document.getElementById("Roman");
+    var Essai = document.getElementById("Essai");
+    var BandeDessinée = document.getElementById("Bande-Dessinée");
+    var Table = document.getElementsByTagName("table")[0];
+    // var mytype = /^[a-zA-Z-\s]+$/;
+
 
 // ---------- function  ------------
 
@@ -8,31 +30,6 @@ var MyForm = document.getElementById("MyForm");
 MyForm.addEventListener("submit", function(e)
 {
 e.preventDefault();
-
-    // ----------declaration des variables  ------------
-
-var myTitle = document.getElementById('Title');
-var myAuthor = document.getElementById('Author');
-var myPrice = document.getElementById('Prix');
-var myDate = document.getElementById('date');
-var myLangue = document.getElementById('langue');
-// var myselect = document.getElementById('select');
-// var myType = document.getElementById('type');
-var type = document.getElementsByClassName("type");
-var validationOK = true;
-var erreurTitle = document.getElementById("erreurTitle");
-var erreurAuthor = document.getElementById("erreurAuthor");
-var erreurprice = document.getElementById("erreurprice");
-var erreurdate = document.getElementById("erreurdate");
-var erreurLangue = document.getElementById("erreurLangue");
-var erreurType = document.getElementById("erreurType");
-var Roman = document.getElementById("Roman");
-var Essai = document.getElementById("Essai");
-var BandeDessinée = document.getElementById("Bande-Dessinée");
-var Table = document.getElementsByTagName("table")[0];
-
-
-// var mytype = /^[a-zA-Z-\s]+$/;
 
     // --------------- myTitle -----------------
 
@@ -151,7 +148,7 @@ else{
     // --------------- validationOK = true -----------------
 
 
-if(validationOK ){
+    if(validationOK ){
 
     // alert('Formulaire envoyé !') ;
 
@@ -218,26 +215,26 @@ if(validationOK ){
     
         // -------------- delete row --------------
     
-        var RowIndex;
+        // var RowIndex;
 
-        DeleteButton.addEventListener("click",function()
-        {
-            for(var j=0;j<Table.rows.length;j++)
-            {
-                Table.rows[j].onclick=function()
-                {
-                    if (confirm("Prees Okey, If you want to delete data.")) 
-                        {
-                            RowIndex=this.rowIndex;
-                            Table.deleteRow(RowIndex);
-                        } 
-                        else {
-                            alert("you pressed cancel!");
-                        }
-                };
-            }
-        }   
-        );
+        // DeleteButton.addEventListener("click",function()
+        // {
+        //     for(var j=0;j<Table.rows.length;j++)
+        //     {
+        //         Table.rows[j].onclick=function()
+        //         {
+        //             if (confirm("Prees Okey, If you want to delete data.")) 
+        //                 {
+        //                     RowIndex=this.rowIndex;
+        //                     Table.deleteRow(RowIndex);
+        //                 } 
+        //                 else {
+        //                     alert("you pressed cancel!");
+        //                 }
+        //         };
+        //     }
+        // }   
+        // );
 
 
         // -------------- update row --------------
@@ -251,32 +248,45 @@ if(validationOK ){
         // 		    Table.rows[i].onclick=function()
         // 			{
 
-//var myTitle = document.getElementById('Title');
-// var myAuthor = document.getElementById('Author');
-// var myPrice = document.getElementById('Prix');
-// var myDate = document.getElementById('date');
-// var myLangue = document.getElementById('langue');
-// var myselect = document.getElementById('select');
-// var myType = document.getElementById('type');
-// var type = document.getElementsByClassName("type")
+                        // myTitle.value=this.cells[0].innerHTML;
+                        // myAuthor.value=this.cells[1].innerHTML;
+                        // myPrice.value=this.cells[2].innerHTML;
+                        // myDate.value=this.cells[3].innerHTML;
+                        // myLangue.value=this.cells[4].innerHTML;
+                        // type.value=this.cells[5].innerHTML;
 
-                // myTitle.value=this.cells[0].innerHTML;
-                // myAuthor.value=this.cells[1].innerHTML;
-                // myPrice.value=this.cells[2].innerHTML;
-                // myDate.value=this.cells[3].innerHTML;
-                // myLangue.value=this.cells[4].innerHTML;
-                // type.value=this.cells[5].innerHTML;
-
-            // 		};
-            // 	}
-            // }  
-            // );
+                    //};
+              //}
+          //}  
+        //);
 
                 // return true;
-            }
+        }
             // var DeleteButton = document.getElementById("DeleteButton");
+
+        // -------------- selescted row data into unput text --------------
+
+                // function selectedRowtoInpt()
+                // {
+                //     // var rIndex, Table = document.getElementById("Table");
+                //     var rIndex, Table = document.getElementsByTagName("table")[0];
+                    
+                //         for(var j=0;j<Table.rows.length; j++)
+                //         {
+                //             Table.rows[j].onclick = function()
+                //             {
+                //                 rIndex = this.rowIndex ;
+                //                 myTitle.value=this.cells[0].innerHTML;
+                //                 myAuthor.value=this.cells[1].innerHTML;
+                //                 myPrice.value=this.cells[2].innerHTML;
+                //                 myDate.value=this.cells[3].innerHTML;
+                //                 myLangue.value=this.cells[4].innerHTML;
+                //                 type.value=this.cells[5].innerHTML;
+                //             }
+                //         }
+                      
+                // }    
             
-}
-      
+    }
 );
 

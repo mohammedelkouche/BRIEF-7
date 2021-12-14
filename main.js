@@ -1,16 +1,8 @@
 
 
-var MyForm = document.getElementById("MyForm");
+ // ----------declaration des variables  ------------
 
-    // ---------- function  ------------
-
-
-MyForm.addEventListener("submit", function(e)
-{
-    e.preventDefault();
-
-        // ----------declaration des variables  ------------
-
+    var MyForm = document.getElementById("MyForm");
     var myTitle = document.getElementById('Title');
     var myAuthor = document.getElementById('Author');
     var myPrice = document.getElementById('Prix');
@@ -19,7 +11,10 @@ MyForm.addEventListener("submit", function(e)
     // var myselect = document.getElementById('select');
     // var myType = document.getElementById('type');
     var type = document.getElementsByClassName("type");
+    var input = document.getElementsByTagName("input");
+
     var validationOK = true;
+
     var erreurTitle = document.getElementById("erreurTitle");
     var erreurAuthor = document.getElementById("erreurAuthor");
     var erreurprice = document.getElementById("erreurprice");
@@ -31,8 +26,65 @@ MyForm.addEventListener("submit", function(e)
     var BandeDessinée = document.getElementById("Bande-Dessinée");
     var Table = document.getElementsByTagName("table")[0];
 
+ // var mytype = /^[a-zA-Z-\s]+$/;
 
-    // var mytype = /^[a-zA-Z-\s]+$/;
+// ---------------------- function ------------------------
+
+        // -------------- Delete row --------------
+                
+        function deleteRow(r) {
+            
+            if (confirm("Prees Okey, If you want to delete data.")) 
+                {
+                    var i = r.parentNode.parentNode.rowIndex;
+                    Table.deleteRow(i);
+                }    
+        }
+        
+        // -------------- Edit row --------------
+           
+        function EditRow(ed) {
+            var i = ed.parentNode.parentNode.rowIndex;
+            var row = Table.rows[i];
+            if (ed.value == "Edit") {
+                myTitle.value  = row.cells[0].innerHTML;
+                myAuthor.value = row.cells[1].innerHTML;
+                myPrice.value  = row.cells[2].innerHTML;
+                myDate.value   = row.cells[3].innerHTML;
+                myLangue.value = row.cells[4].innerHTML;
+
+                for (var i = 0; i < type.length; i++) {
+
+                    if (row.cells[5].innerHTML == type[i].value) {
+                        type[i].checked = true;
+                    }
+                    
+                }
+                ed.value = "Save"
+                document.getElementById("submit").setAttribute("disabled", "true");
+            }
+            else {
+                row.cells[0].innerHTML = myTitle.value;
+                row.cells[1].innerHTML = myAuthor.value ;
+                row.cells[2].innerHTML = myPrice.value;
+                row.cells[3].innerHTML = myDate.value;
+                row.cells[4].innerHTML = myLangue.options[myLangue.selectedIndex].value;
+                for (var i = 0; i < type.length; i++) {
+                    if (type[i].checked) {
+                        row.cells[5] = type[i].value;
+                    }
+                }
+                ed.value = "Edit";
+                document.getElementById("submit").removeAttribute("disabled")
+                resetForm();
+            }
+            
+        }
+
+
+MyForm.addEventListener("submit", function(e)
+{
+    e.preventDefault();
 
         // --------------- myTitle -----------------
 
@@ -171,33 +223,47 @@ MyForm.addEventListener("submit", function(e)
                 row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value;
                 
                 var temp_cell="";
-                    for(var i=0;i<type.length;i++){
+                    for(var i=0 ; i<type.length ; i++){
                         if(type[i].checked){
                             temp_cell = type[i].value;
                         }
                     }
                 row.insertCell(5).innerHTML = temp_cell;
                 row.insertCell(6).innerHTML = 
-                '<button id="UpdateButton"  onclick="EditRow(this)" >Edit</button>' + '<button id="DeleteButton" onclick="deleteRow(this)">Delete</button>' ;
+
+                        "<input class='edit_btn' id='UpdateButton' onclick='EditRow(this)' type='button' value='Edit'>" +
+                        "<input class='dlt_btn'  id='DeleteButton' onclick='deleteRow(this)' type='button' value='Delete'>";
+                        
+                         //--------clear form methode 1 -------
+
+                    // for(var j = 0; j<4; j++){
+                    //     input[j].value = "";
+                    // } 
+                    // var clear = document.getElementsByClassName("type");
+                    // for (var j = 0 ; j < clear.length; j++) {
+                    //         if (clear[j].type == "radio") {
+                    //         clear[j].checked = false;
+                    //     }
+                    // }
+
+                        //--------- clear form methode 2------
+                // myTitle.value = "";
+                // myAuthor.value = "";
+                // myPrice.value = "";
+                // myDate.value = "";
+                // myLangue.value = "";
+                // }  
                 
-               
-                
-                for(var i = 0; i<4;i++){
-                    input[i].value = "";
+                // var x = document.getElementsByClassName("type");
+                // var i;
+                // for (i = 0; i < x.length; i++) {
+                // if (x[i].type == "radio") {
+                // x[i].checked = false;
+                //   } 
+                // }
+     
                     
-                } 
-                myLangue.value="-- select langue--"; 
-                var x = document.getElementsByName("season");
-                    var i;
-                    for (i = 0; i < x.length; i++) {
-                    if (x[i].type == "radio") {
-                    x[i].checked = false;
-                    } }
-        
-            }
-
-    // }
-
+    
                 // --------- Methode 2 create buttons -----------
 
                 // var UpdateButton = document.createElement("button");
@@ -230,43 +296,14 @@ MyForm.addEventListener("submit", function(e)
 
                 // Table.innerHTML+=tableAjoute; 
 
-            // -------------- selescted row data into unput text --------------
-
-                // function selectedRowtoInpt()
-                // {
-                //     // var rIndex, Table = document.getElementById("Table");
-                //     var rIndex, Table = document.getElementsByTagName("table")[0];
-                    
-                //         for(var j=0;j<Table.rows.length; j++)
-                //         {
-                //             Table.rows[j].onclick = function()
-                //             {
-                //                 rIndex = this.rowIndex ;
-                //                 myTitle.value=this.cells[0].innerHTML;
-                //                 myAuthor.value=this.cells[1].innerHTML;
-                //                 myPrice.value=this.cells[2].innerHTML;
-                //                 myDate.value=this.cells[3].innerHTML;
-                //                 myLangue.value=this.cells[4].innerHTML;
-                //                 type.value=this.cells[5].innerHTML;
-                //             }
-                //         }
-                      
-                // }
-
-            // -------------- delete row --------------
-        
-            function deleteRow(r) {
-                var i = r.parentNode.parentNode.rowIndex;
-                Table.deleteRow(i);
-            }   
+        }  
 
 
 
-		    // -------------- update row --------------
-
-            
-               
+             
+		    
 	}
           
 );
 
+   
