@@ -4,13 +4,12 @@
     font-family: 'Times New Roman', Times, serif;
 }
 body{
-<<<<<<< HEAD
     background-image: url(Photo/libraryBooks.jpg);
-    background-size: cover;
-    width: 100%;
-    /* background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* width: 100%; */
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover; */
+    background-size: cover;
 }
 h1{
     text-align: center;
@@ -23,7 +22,7 @@ h1{
     width: 50%;
   margin: 80px auto;
   padding: 10px;
-  background-color: rgba(200, 200, 200, .5);
+  background-color: rgba(226, 226, 226, 0.63);
   border: 5px solid #D7FBFF;
   display: flex;
   justify-content: center;
@@ -31,16 +30,24 @@ h1{
 label{
     font-size: 20px;
 }
-input{
+#Form_div input {
     width: 250px;
-    height:3px; 
+    height:12px; 
     padding: 15px 20px;
     margin: 5px 0; 
     border-radius: 5px;
 }
+
 .error{
     font-size: 20px;
     
+}
+#langue{
+    width: 146px;
+    height: 33px;
+    /* padding: 14px 23px; */
+    margin: 5px 0;
+    border-radius: 5px;
 }
 caption{
     font-size: 25px;
@@ -50,7 +57,7 @@ caption{
     width: 60%;
 	margin: 100px auto;
 	padding: 10px;
-	background-color: rgba(200, 200, 200, .5);
+	background-color: rgba(226, 226, 226, 0.63);
 	border: 5px solid #D7FBFF;
     display: flex;
   justify-content: center;
@@ -68,6 +75,11 @@ table td{
 table th:nth-child(odd) td{
     background-color: #1f7aa8;
 }
+.button{
+width: 100%;
+margin: 5px;
+height: 40px;
+}
 input[type="submit"]{ 
     background: #eee;
     padding: 23px 13px;
@@ -75,15 +87,23 @@ input[type="submit"]{
     /* display: inline-block; */
     border: none;
     border-radius: 10px;
-    font-size: 23px;
+    width: 48% ;
+    /* margin: 6px; */
+    /* height: 49px; */
+    font-size: 14px;
     cursor: pointer;
-    outline: none;
+    /* outline: none; */
 }
 
 input[type="submit"]:hover{
     background: #4b99d8;
-=======
-    background-image: url(photo/Background.jpg);
-    width: 100%;
->>>>>>> 888839e61d400ea38eab440d53938772a7a538f9
 }
+#Submit_div input{
+    width: 30%;
+    margin: 0px;
+    height: 40px;
+}
+
+/* #submit{
+
+} */
