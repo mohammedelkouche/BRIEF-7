@@ -4,6 +4,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 body{
+<<<<<<< HEAD
     background-image: url(Photo/libraryBooks.jpg);
     background-size: cover;
     width: 100%;
@@ -81,4 +82,6 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
     background: #4b99d8;
+    width: 100%;
+>>>>>>> 888839e61d400ea38eab440d53938772a7a538f9
 }

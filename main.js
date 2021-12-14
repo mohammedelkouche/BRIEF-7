@@ -1,6 +1,10 @@
 
 
+<<<<<<< HEAD
  // ----------declaration des variables  ------------
+=======
+    // ----------declaration des variables  ------------
+>>>>>>> 888839e61d400ea38eab440d53938772a7a538f9
 
     var MyForm = document.getElementById("MyForm");
     var myTitle = document.getElementById('Title');
@@ -26,6 +30,7 @@
     var BandeDessinée = document.getElementById("Bande-Dessinée");
     var Table = document.getElementsByTagName("table")[0];
 
+<<<<<<< HEAD
  // var mytype = /^[a-zA-Z-\s]+$/;
 
 // ---------------------- function ------------------------
@@ -80,6 +85,24 @@
             }
             
         }
+
+
+MyForm.addEventListener("submit", function(e)
+{
+    e.preventDefault();
+=======
+    // var mytype = /^[a-zA-Z-\s]+$/;
+>>>>>>> 888839e61d400ea38eab440d53938772a7a538f9
+
+// -------------- delete row --------------
+        
+function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    Table.deleteRow(i);
+} 
+
+
+    // ---------- function  ------------
 
 
 MyForm.addEventListener("submit", function(e)
@@ -230,6 +253,7 @@ MyForm.addEventListener("submit", function(e)
                     }
                 row.insertCell(5).innerHTML = temp_cell;
                 row.insertCell(6).innerHTML = 
+<<<<<<< HEAD
 
                         "<input class='edit_btn' id='UpdateButton' onclick='EditRow(this)' type='button' value='Edit'>" +
                         "<input class='dlt_btn'  id='DeleteButton' onclick='deleteRow(this)' type='button' value='Delete'>";
@@ -264,6 +288,14 @@ MyForm.addEventListener("submit", function(e)
      
                     
     
+=======
+                '<button id="UpdateButton" classe="btn"  onclick="EditRow(this)" >Edit</button> ' + '<button id="DeleteButton" onclick="deleteRow(this)" classe="btn" >Delete</button>' ;
+                        
+            }
+
+    // }
+
+>>>>>>> 888839e61d400ea38eab440d53938772a7a538f9
                 // --------- Methode 2 create buttons -----------
 
                 // var UpdateButton = document.createElement("button");
@@ -296,6 +328,7 @@ MyForm.addEventListener("submit", function(e)
 
                 // Table.innerHTML+=tableAjoute; 
 
+<<<<<<< HEAD
         }  
 
 
@@ -305,5 +338,66 @@ MyForm.addEventListener("submit", function(e)
 	}
           
 );
+=======
+		    // -------------- update row --------------
+    }         
+);
+
+
+
+// function EditRow(r) {
+//         var table=document.getElementsByTagName("table")[0];
+
+//         // var type=document.getElementsByName("radiobtn");
+//     var i = r.parentNode.parentNode.rowIndex;
+//     var R=table.rows[i];
+//     if(r.value=="EditRow"  ){
+//         myTitle.value;
+//                 row.insertCell(1).innerHTML = myAuthor.value;
+//                 row.insertCell(2).innerHTML = myPrice.value;
+//                 row.insertCell(3).innerHTML = myDate.value;
+//                 row.insertCell(4).innerHTML = myLangue.options[myLangue.selectedIndex].value
+                
+   
+//     // var myselect = document.getElementById('select');
+//     // var myType = document.getElementById('type');
+//     var type = document.getElementsByClassName("type");
+//         document.getElementById("Title").value = R.cells[0].innerHTML;
+//         document.getElementById("Author").value= R.cells[1].innerHTML;
+//         document.getElementById("Prix").value=R.cells[2].innerHTML;
+//         document.getElementById("date").value= R.cells[3].innerHTML;
+//         document.getElementById("langue").value= R.cells[4].innerHTML;
+        
+//         for(i=0;i<type.length;i++)
+//         {
+//             if(R.cells[5].innerHTML==type[i].value)
+//             {
+//                 type[i].checked=true;
+//             }
+//         }
+//         r.value="save"
+//         document.getElementById('btn').setAttribute("disabled","true");
+//     } 
+
+//     else{
+//         R.cells[0].innerHTML = document.getElementById("Title").value;
+//         R.cells[1].innerHTML = document.getElementById("Author").value.value;
+//         R.cells[2].innerHTML=  document.getElementById("Prix").value;
+//         R.cells[3].innerHTML =    document.getElementById("date").value;
+//         R.cells[4].innerHTML =  document.getElementById("langue").value;
+    
+//         for(i=0;i<type.length;i++)
+//         {
+//             if(type[i].checked==true)
+//             {
+//                 R.cells[5].innerHTML=type[i].value;
+//             }
+//         } 
+//         r.value="EditRow"
+//         document.getElementById('btn').removeAttribute("disabled");
+//         // resetForm();
+//     } 
+// }
+>>>>>>> 888839e61d400ea38eab440d53938772a7a538f9
 
    
