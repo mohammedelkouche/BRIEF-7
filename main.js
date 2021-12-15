@@ -241,6 +241,7 @@ MyForm.addEventListener("submit", function(e)
                         "<input class='button' id='UpdateButton' onclick='EditRow(this)' type='button' value='Edit'> " +
                         "<input class='button' id='DeleteButton' onclick='deleteRow(this)' type='button' value='Delete'>";
                         
+
                          //--------clear form methode 1 -------
 
                     for(var j = 0; j<4; j++){
