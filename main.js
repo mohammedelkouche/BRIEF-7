@@ -243,15 +243,15 @@ MyForm.addEventListener("submit", function(e)
                         
                          //--------clear form methode 1 -------
 
-                    // for(var j = 0; j<4; j++){
-                    //     input[j].value = "";
-                    // } 
-                    // var clear = document.getElementsByClassName("type");
-                    // for (var j = 0 ; j < clear.length; j++) {
-                    //         if (clear[j].type == "radio") {
-                    //         clear[j].checked = false;
-                    //     }
-                    // }
+                    for(var j = 0; j<4; j++){
+                        input[j].value = "";
+                    } 
+                    var clear = document.getElementsByClassName("type");
+                    for (var j = 0 ; j < clear.length; j++) {
+                            if (clear[j].type == "radio") {
+                            clear[j].checked = false;
+                        }
+                    }
 
                         //--------- clear form methode 2------
                 // myTitle.value = "";
