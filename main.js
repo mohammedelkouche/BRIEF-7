@@ -74,12 +74,10 @@
                     if (type[i].checked==true) {
                         row.cells[5].innerHTML = type[i].value;
                     }
-                    // type[i].checked==(true ) 
-                    // row.cells[5](.innerHTML)
+                
                 }
                 modifier.value = "Edit";
                 document.getElementById("submit").removeAttribute("disabled")
-                // resetForm();
             }
             
         }
