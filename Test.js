@@ -36,7 +36,7 @@ e.preventDefault();
 
 if( myTitle.value.trim() =="" )
 {
-    erreurTitle.innerHTML = ('Remplire le champs');
+    erreurTitle.innerHTML = ('This field is required');
     erreurTitle.style.color ='red';
     validationOK = false;  
 }
@@ -61,7 +61,7 @@ else {
 
 
 if( myAuthor.value.trim() ==""){
-    erreurAuthor.innerHTML = ('Remplire le champs');
+    erreurAuthor.innerHTML = ('This field is required');
     erreurAuthor.style.color ='red';
     validationOK = false;  
 }
@@ -84,7 +84,7 @@ else{
 
 
 if(myPrice.value ==""){
-        erreurprice.innerHTML = ('Remplire le champs ');
+        erreurprice.innerHTML = ('This field is required ');
         erreurprice.style.color ='red';
         validationOK = false;
 }
@@ -110,7 +110,7 @@ else{
 
 
 if(myDate.value ==""){
-    erreurdate.innerHTML = ('Remplire le champs');
+    erreurdate.innerHTML = ('This field is required');
     erreurdate.style.color ='red';
     validationOK = false;
 }
